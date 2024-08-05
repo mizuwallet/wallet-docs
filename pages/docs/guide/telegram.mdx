@@ -1,0 +1,48 @@
+import { Steps, Callout } from "nextra/components";
+
+# Telegram Mini App
+
+Your dApp can be promoted and reach millions of users through the [**Telegram Mini App**](https://core.telegram.org/bots/webapps) by intergated with **MizuWallet** on Aptos.
+And it's very easy to convert your dApp to a Telegram Mini App.
+
+{/* prettier-ignore */}
+<Steps>
+### Create A Bot
+
+Open [@BotFather](https://t.me/BotFather), then type `/start`.
+
+Create a new bot by `/newbot` or setting up an existing bot by `/mybots`.
+
+### Create A Mini App
+
+Create a new Mini App by `/newapp` or setting up an existing Mini App by `/myapps`.
+
+<Callout>Please follow the conversations to set up step by step.</Callout>
+
+**NOTICE**:
+If your dApp is using [aptos-wallet-adapter](https://github.com/aptos-labs/aptos-wallet-adapter), there's no more things need to do.
+
+When users `connect` / `signAndSubmitTransaction` on your dApp, the wallet will automatically redirect to the `MizuWallet` Mini App.
+
+### Initializing Mini App
+
+<Callout>
+  Please continue the steps below to initialize your Mini App if you are __not__
+  using
+  [aptos-wallet-adapter](https://github.com/aptos-labs/aptos-wallet-adapter).
+</Callout>
+
+Place the [Telegram Script](https://core.telegram.org/bots/webapps#initializing-mini-apps) in the `<head>` tag before any other scripts.
+
+```
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+```
+
+### Connect Mizu Wallet
+
+### Sign And Submit Transaction
+
+To learn more details about using `MizuWallet`, please refer to [`@mizuwallet-sdk/core`](/docs/mizu-wallet).
+
+</Steps>

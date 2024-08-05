@@ -1,0 +1,42 @@
+# Manifest.json
+
+Every app needs to have its manifest to pass meta information to the wallet. Manifest is a JSON file named as mizuwallet-connect-manifest.json following format:
+
+{/* prettier-ignore */}
+```mdx
+{
+	"url": "<app-url>", // required
+	"name": "<app-name>", // required
+	"iconUrl": "<app-icon-url>", // required
+	"termsOfUseUrl": "<terms-of-use-url>", // optional
+	"privacyPolicyUrl": "<privacy-policy-url>" // optional
+}
+```
+
+## Example
+
+You can find an example of the manifest below:
+
+{/* prettier-ignore */}
+```mdx
+{
+	"url": "https://mizu.io",
+    "name": "MizuWallet Telegram Adapter Test",
+  	"iconUrl": "https://placehold.co/400/000000/FFF?text=A",
+}
+```
+
+## Best Practices
+
+. Best practice is to place the manifest in the root of your app and repository, e.g. https://myapp.com/mizuwallet-connect-manifest.json. It allows the wallet to handle your app better and improve the UX connected to your app.  
+. Make sure that manifest.json file is available to GET by its URL.
+
+## Fields description
+
+| Field            | Requirement | Description                                                                                                                                                                |
+| ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url              | required    | App URL. Will be used as the DAppidentifier. Will be used to open the DAppafter click to its icon in the wallet. It is recommended to pass url without closing slash, e.g. |
+| name             | required    | The name of the dApp. Will not be used as identifier.                                                                                                                      |
+| iconUrl          | required    | Url to the app icon. Must be PNG, ICO, ... format. SVG icons are not supported. Perfectly pass url to a 180x180px PNG icon.                                                |
+| termsOfUseUrl    | optional    | Url to the Terms Of Use document. Optional for usual apps, but required for the apps which is placed in the Tonkeeper recommended apps list.                               |
+| privacyPolicyUrl | optional    | Url to the Privacy Policy document. Optional for usual apps, but required for the apps which is placed in the Tonkeeper recommended apps list.                             |

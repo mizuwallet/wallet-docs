@@ -1,0 +1,63 @@
+import { Tabs, Callout, Steps } from "nextra/components";
+import { PackageManagers } from "../../../config/index";
+
+# @mizuwallet-sdk/aptos-wallet-adapter
+
+## React
+
+In react, we recommend to use [`@aptos-labs/wallet-adapter-react`](https://github.com/aptos-labs/aptos-wallet-adapter/tree/main/packages/wallet-adapter-react).  
+And use the code reference to use the `useWallet` hook and `AptosWalletAdapterProvider` provider.  
+Like [here](https://github.com/aptos-labs/aptos-wallet-adapter/blob/main/apps/nextjs-example/src/components/WalletProvider.tsx).
+
+### Installation
+
+<Tabs items={PackageManagers.map((_) => _.name)}>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	pnpm add @aptos-labs/wallet-adapter-react 
+	```
+  </Tabs.Tab>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	npm i @aptos-labs/wallet-adapter-react 
+	```
+  </Tabs.Tab>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	yarn add @aptos-labs/wallet-adapter-react 
+	```
+  </Tabs.Tab>
+</Tabs>
+
+<Callout>It recommends using `pnpm` or `yarn` to install the package.</Callout>
+
+### Configration
+
+Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWalletAdapterProvider` provider.  
+Read more about [`Manifest URL`](/docs/guide/manifestURL).
+
+```mdx
+<AptosWalletAdapterProvider
+	...
+	dappConfig={{
+		aptosConnectDappId: "",
+		network: Network.TESTNET,
+		// Add your config here
+		mizuwallet: {
+			manifestURL: <YOUR_DAPP_MANIFEST_URL>
+		},
+	}}
+	onError={(error) => {}}
+    >
+      {children}
+</AptosWalletAdapterProvider>
+```
+
+## 🚧 Vue
+
+```
+// Coming Soon...
+```

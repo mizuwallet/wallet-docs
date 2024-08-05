@@ -1,0 +1,10 @@
+{
+  "index": "Introduction",
+  "guide": "Guide",
+
+  "-- MizuWalletSDK": {
+    "type": "separator",
+    "title": "MizuWalletSDK"
+  },
+  "@mizuwallet-sdk": ""
+}
