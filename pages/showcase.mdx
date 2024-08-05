@@ -1,7 +1,40 @@
 ---
-title: Showcase
+## title: Showcase
 ---
 
-<div className='flex justify-center py-[10rem] text-[2rem] font-bold'>
-  🚧 Coming Soon...
+import { Cards, Card } from "nextra/components";
+
+<div className='max-w-[800px] w-full flex-col mx-auto'>
+  <Cards num={1}>
+    <ShowcaseCard
+      title='Aptos Wallet Adapter Tester'
+      href='https://aptos-labs.github.io/aptos-wallet-adapter/'
+    >
+      <>![The Graph preview](../assets/tester.png)</>
+    </ShowcaseCard>
+    <ShowcaseCard
+      title='Aptos Wallet Adapter Tester On Telegram'
+      href='https://t.me/MizuWalletAdapterTestBot/MizuWalletAdapterDemo'
+    ></ShowcaseCard>
+  </Cards>
 </div>
+
+export const ShowcaseCard = Object.assign(
+  // Copy card component and add default props
+  Cards.Card.bind(),
+  {
+    displayName: "ShowcaseCard",
+    defaultProps: {
+      image: true,
+      arrow: true,
+      target: "_blank",
+    },
+  }
+);
+
+<style global jsx>{`
+  img {
+    aspect-ratio: 12/6.3;
+    object-fit: cover;
+  }
+`}</style>

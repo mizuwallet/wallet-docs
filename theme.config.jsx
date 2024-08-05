@@ -5,8 +5,7 @@ import LogoColor from "./assets/mizu_logo_color.png";
 import LogoWhiteColor from "./assets/mizu_logo_white.png";
 import FaviconImage from "./assets/favicon.png";
 
-const DescriptionContent =
-  "MizuWallet - The Seamless Next-Gen Wallet on Aptos.";
+const DescriptionContent = "Mizu - The Seamless Next-Gen Wallet on Aptos.";
 const SocialImage = "https://assets.mz.xyz/static/images/mizu_icon.png";
 
 export default {
@@ -26,7 +25,7 @@ export default {
     const { asPath } = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s – MizuWallet",
+        titleTemplate: "%s – Mizu",
       };
     }
   },
@@ -48,12 +47,9 @@ export default {
         <meta name='twitter:site:domain' content='mizu.io' />
         <meta name='twitter:url' content='https://docs.mizu.io' />
 
-        <meta
-          name='og:title'
-          content={title ? title + " – MizuWallet" : "MizuWallet"}
-        />
+        <meta name='og:title' content={title ? title + " – Mizu" : "Mizu"} />
         <meta name='og:image' content={SocialImage} />
-        <meta name='apple-mobile-web-app-title' content='MizuWallet' />
+        <meta name='apple-mobile-web-app-title' content='Mizu' />
         <link rel='icon' href={FaviconImage.src} type='image/png' />
       </>
     );

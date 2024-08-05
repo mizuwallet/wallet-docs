@@ -3,12 +3,15 @@ import { PackageManagers } from "../../../config/index";
 
 # @mizuwallet-sdk/aptos-wallet-adapter
 
+[Live Demo](https://aptos-labs.github.io/aptos-wallet-adapter/)
+
 ## React
 
 In react, we recommend to use [`@aptos-labs/wallet-adapter-react`](https://github.com/aptos-labs/aptos-wallet-adapter/tree/main/packages/wallet-adapter-react).  
 And use the code reference to use the `useWallet` hook and `AptosWalletAdapterProvider` provider.  
 Like [here](https://github.com/aptos-labs/aptos-wallet-adapter/blob/main/apps/nextjs-example/src/components/WalletProvider.tsx).
 
+<Steps>
 ### Installation
 
 <Tabs items={PackageManagers.map((_) => _.name)}>
@@ -36,8 +39,7 @@ Like [here](https://github.com/aptos-labs/aptos-wallet-adapter/blob/main/apps/ne
 
 ### Configration
 
-Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWalletAdapterProvider` provider.  
-Read more about [`Manifest URL`](/docs/guide/manifestURL).
+Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWalletAdapterProvider` provider.
 
 ```mdx
 <AptosWalletAdapterProvider
@@ -45,19 +47,121 @@ Read more about [`Manifest URL`](/docs/guide/manifestURL).
 	dappConfig={{
 		aptosConnectDappId: "",
 		network: Network.TESTNET,
-		// Add your config here
-		mizuwallet: {
-			manifestURL: <YOUR_DAPP_MANIFEST_URL>
-		},
-	}}
-	onError={(error) => {}}
+		optInWallets={["Mizu Wallet"]}
+    	// Add your config here
+    	mizuwallet: {
+    		manifestURL: <YOUR_DAPP_MANIFEST_URL>
+    	},
+    }}
+    onError={(error) => {}}
     >
       {children}
+
 </AptosWalletAdapterProvider>
 ```
 
-## 🚧 Vue
+<Callout>Read more about [`Manifest URL`](/docs/guide/manifestURL).</Callout>
+
+### Usage
+
+If you want to add the shadcn/ui Aptos wallet selector to your shadcn-based app, follow these steps:
+
+- Follow the [shadcn/ui installation instructions](https://ui.shadcn.com/docs/installation) if you haven't already configured it in your app.
+
+- Run the following command to install all of the shadcn/ui components that the wallet selector depends on:
+
+```bash
+npx shadcn-ui@latest add button collapsible dialog dropdown-menu toast
+```
+
+- Copy the [wallet-selector.tsx](./src/components/WalletSelector.tsx) file from this repo to your `src/components/` directory.
+
+- If you have not already configured `AptosWalletAdapterProvider` for your app, you can also copy the [wallet-provider.tsx](./src/components/WalletProvider.tsx) file from this repo. Be sure to install the `@aptos-labs/wallet-adapter-react` package and the wallet adapter plugins for the wallet options you plan to support.
+
+- Wrap your app with the `WalletProvider` component. See [layout.tsx](./src/app/layout.tsx) for an example.
+
+- Render `<WalletSelector />` in your app where you want to place the "Connect Wallet" button. See [page.tsx](./src/app/page.tsx) as an example.
+
+</Steps>
+
+## Vue
+
+<Steps>
+### Installation
+
+<Tabs items={PackageManagers.map((_) => _.name)}>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	pnpm add @aptos-labs/wallet-adapter-core 
+	```
+  </Tabs.Tab>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	npm i @aptos-labs/wallet-adapter-core 
+	```
+  </Tabs.Tab>
+  {/* prettier-ignore */}
+  <Tabs.Tab>
+    ```mdx 
+	yarn add @aptos-labs/wallet-adapter-core 
+	```
+  </Tabs.Tab>
+</Tabs>
+
+### Configration
+
+{/* prettier-ignore */}
+```typescript
+import { WalletCore } from '@aptos-labs/wallet-adapter-core';
+
+const walletCore = new WalletCore([], ['Mizu Wallet'], {
+	network: Network.TESTNET,
+	mizuwallet: {
+		manifestURL: <YOUR_DAPP_MANIFEST_URL>,
+	},
+});
 
 ```
-// Coming Soon...
+
+### Usage
+
+#### connect
+
+```typescript
+// Listen to the event `connect`
+walletCore.on("connect", () => {
+  console.log(walletCore.account?.address);
+});
+
+walletCore?.connect("Mizu Wallet");
 ```
+
+#### disconnect
+
+```typescript
+walletCore?.disconnect();
+```
+
+#### signAndSubmitTransaction
+
+```typescript
+const transaction = {
+  data: {
+    function: "0x1::aptos_account::transfer",
+    typeArguments: ["0x1::aptos_coin::AptosCoin"],
+    functionArguments: [
+      "0xec08b1fbd892910bf772c2e4595864efb2169e68dafa32dc2f123383dd246c51",
+      1,
+    ],
+  },
+};
+
+const response = await walletCore?.signAndSubmitTransaction(transaction);
+
+// response.hash is the transaction hash
+console.log(response.hash);
+```
+
+</Steps>

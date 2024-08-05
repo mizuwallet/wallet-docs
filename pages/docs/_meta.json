@@ -2,9 +2,15 @@
   "index": "Introduction",
   "guide": "Guide",
 
-  "-- MizuWalletSDK": {
+  "-- Mizu": {
     "type": "separator",
-    "title": "MizuWalletSDK"
+    "title": "Mizu"
   },
-  "@mizuwallet-sdk": ""
+  "@mizuwallet-sdk": "",
+
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "fqa": "FQA"
 }
