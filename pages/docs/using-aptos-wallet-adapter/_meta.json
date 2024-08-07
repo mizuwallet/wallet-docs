@@ -1,6 +1,5 @@
 {
-  "explore-dapps": "Explore DApps",
-  "aptos-wallet-adapter": "@mizuwallet-sdk/aptos-wallet-adapter",
+  "extension-dapps": "Extension DApps",
   "telegram-miniApps": "Telegram MiniApps",
   "mobile": "iOS/Android Mobile Apps"
 }
