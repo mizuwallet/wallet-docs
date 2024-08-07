@@ -1,16 +1,40 @@
 {
-  "index": "Introduction",
-  "guide": "Guide",
+  "-- Introduction": {
+    "type": "separator",
+    "title": "Introduction"
+  },
+  "what-is-mizu": "What is Mizu?",
+  "key-features": "Key Features",
+  "supported-platforms": "Supported Platforms",
+  "brand-resources": "Brand Resources",
+
+  "-- Getting Started": {
+    "type": "separator",
+    "title": "Getting Started"
+  },
+
+  "preparation": {
+    "title": "Preparation"
+  },
+
+  "-- Integration with wallet": {
+    "type": "separator",
+    "title": "Integration with wallet"
+  },
+
+  "using-aptos-wallet-adapter": "Using Aptos Wallet Adapter",
+  "api-connect": "API Connect",
+
+  "-- Mizu Gas Station": {
+    "type": "separator",
+    "title": "Mizu Gas Station"
+  },
+
+  "tbd": "TBD",
 
   "-- Mizu": {
     "type": "separator",
     "title": "Mizu"
   },
-  "@mizuwallet-sdk": "",
-
-  "-- More": {
-    "type": "separator",
-    "title": "More"
-  },
-  "fqa": "FQA"
+  "@mizuwallet-sdk": ""
 }

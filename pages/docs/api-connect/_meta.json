@@ -1,0 +1,4 @@
+{
+  "telegram-bot": "Telegram Bot",
+  "core": "@mizuwallet-sdk/core"
+}
