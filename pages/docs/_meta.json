@@ -3,10 +3,14 @@
     "type": "separator",
     "title": "Introduction"
   },
-  "what-is-mizu": "What is Mizu?",
+  "what-is-mizu": "What is mizu?",
   "key-features": "Key Features",
   "supported-platforms": "Supported Platforms",
-  "brand-resources": "Brand Resources",
+  "brand-resources": {
+    "title": "Brand Resources ↗",
+    "href": "https://drive.google.com/drive/folders/19yBN39mvpMHaaZ7vEbKn78pkvjdtCjdl?usp=sharing",
+    "newWindow": true
+  },
 
   "-- Getting Started": {
     "type": "separator",
@@ -25,9 +29,9 @@
   "using-aptos-wallet-adapter": "Using Aptos Wallet Adapter",
   "api-connect": "API Connect",
 
-  "-- Mizu Gas Station": {
+  "-- mizu Gas Station": {
     "type": "separator",
-    "title": "Mizu Gas Station"
+    "title": "mizu Gas Station"
   },
 
   "tbd": "TBD"

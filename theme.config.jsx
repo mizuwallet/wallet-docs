@@ -5,7 +5,8 @@ import LogoColor from "./assets/mizu_logo_color.png";
 import LogoWhiteColor from "./assets/mizu_logo_white.png";
 import FaviconImage from "./assets/favicon.png";
 
-const DescriptionContent = "Mizu - The Seamless Next-Gen Wallet on Aptos.";
+const DescriptionContent =
+  "mizu - The Revolutionary Web3 Wallet Connecting Telegram and Aptos";
 const SocialImage = "https://assets.mz.xyz/static/images/mizu_icon.png";
 
 export default {
@@ -25,7 +26,7 @@ export default {
     const { asPath } = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s – Mizu",
+        titleTemplate: "%s – mizu",
       };
     }
   },
@@ -47,9 +48,9 @@ export default {
         <meta name='twitter:site:domain' content='mizu.io' />
         <meta name='twitter:url' content='https://docs.mizu.io' />
 
-        <meta name='og:title' content={title ? title + " – Mizu" : "Mizu"} />
+        <meta name='og:title' content={title ? title + " – mizu" : "mizu"} />
         <meta name='og:image' content={SocialImage} />
-        <meta name='apple-mobile-web-app-title' content='Mizu' />
+        <meta name='apple-mobile-web-app-title' content='mizu' />
         <link rel='icon' href={FaviconImage.src} type='image/png' />
       </>
     );
@@ -78,7 +79,7 @@ export default {
     text: (
       <div className='flex w-full flex-col items-center sm:items-start'>
         <p className='mt-6 text-xs'>
-          © {new Date().getFullYear()} Mizu. All Rights Reserved.
+          © {new Date().getFullYear()} mizu. All Rights Reserved.
         </p>
       </div>
     ),
