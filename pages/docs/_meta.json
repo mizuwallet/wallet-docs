@@ -32,5 +32,6 @@
   "-- mizu Gas Station": {
     "type": "separator",
     "title": "mizu Gas Station"
-  }
+  },
+  "gas-station-sdk": "Typescript SDK"
 }
