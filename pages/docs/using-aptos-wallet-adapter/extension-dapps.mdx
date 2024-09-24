@@ -44,10 +44,10 @@ Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWal
 ```mdx
 <AptosWalletAdapterProvider
 	...
+	optInWallets={["Mizu Wallet"]}
 	dappConfig={{
 		aptosConnectDappId: "",
 		network: Network.TESTNET,
-		optInWallets={["Mizu Wallet"]}
     	// Add your config here
     	mizuwallet: {
     		manifestURL: <YOUR_DAPP_MANIFEST_URL>
@@ -56,12 +56,15 @@ Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWal
     onError={(error) => {}}
     >
       {children}
-
 </AptosWalletAdapterProvider>
 ```
 
 <Callout>
   Read more about [`Manifest URL`](/docs/preparation/manifest-json).
+</Callout>
+<Callout>
+  See the whole code example in the
+  [@aptos-labs/aptos-wallet-adapter](https://github.com/aptos-labs/aptos-wallet-adapter/blob/main/apps/nextjs-example/src/components/WalletProvider.tsx#L34C1-L35C1).
 </Callout>
 
 ### Usage
