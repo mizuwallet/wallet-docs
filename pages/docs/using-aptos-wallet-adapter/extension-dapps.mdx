@@ -41,6 +41,12 @@ Like [here](https://github.com/aptos-labs/aptos-wallet-adapter/blob/main/apps/ne
 
 Place your `<YOUR_DAPP_MANIFEST_URL>` at the `mizuwallet` trait of the `AptosWalletAdapterProvider` provider.
 
+<Callout>
+  Due to the special of Telegram miniapp, `MizuWallet` on Telegram miniapp is
+  divided into two apps: `MizuWallet` and `MizuWallet (Testnet)`. The
+  `MizuWallet (Testnet)` is specifically for `testnet` network.
+</Callout>
+
 ```mdx
 <AptosWalletAdapterProvider
 	...
